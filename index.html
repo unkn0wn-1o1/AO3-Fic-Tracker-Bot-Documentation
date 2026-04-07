@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AO3 Tracker Bot - Track, organize, and share your AO3 fanfiction library with friends. The ultimate reading companion for Discord.">
+    <title>AO3 Tracker Bot - Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="bg-gradient"></div>
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">📚</span>
+                <span>AO3 Tracker</span>
+            </a>
+            <nav>
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="guide.html" class="nav-link">Guide</a>
+                <a href="commands.html" class="nav-link">Commands</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="hero">
+            <h1>AO3 Tracker Bot</h1>
+            <p>Track, organize, and share your AO3 fanfiction library with friends. The ultimate reading companion for Discord.</p>
+            <div class="hero-buttons">
+                <a href="https://discord.com/oauth2/authorize?client_id=1485848832645267566&permissions=277025507392&integration_type=0&scope=bot+applications.commands" target="_blank" class="btn btn-primary">
+                    <span>✨</span> Add to Server
+                </a>
+                <a href="guide.html" class="btn btn-secondary">
+                    <span>📖</span> View Guide
+                </a>
+            </div>
+        </div>
+
+        <div class="quick-start">
+            <h3>⚡ Quick Start</h3>
+            <div class="quick-start-steps">
+                <div class="qs-step">
+                    <div class="qs-step-num">1</div>
+                    <p><strong>Add the bot</strong> to your Discord server</p>
+                </div>
+                <div class="qs-step">
+                    <div class="qs-step-num">2</div>
+                    <p><strong>Post an AO3 link</strong> in any channel</p>
+                </div>
+                <div class="qs-step">
+                    <div class="qs-step-num">3</div>
+                    <p><strong>Done!</strong> The bot saves it to your library</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">📖</div>
+                <h3>Reading Tracking</h3>
+                <p>Mark works as unread, reading, or completed. Track your chapter and word progress with visual progress bars.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⭐</div>
+                <h3>Personal Ratings</h3>
+                <p>Rate works 1-5 stars, add custom tags for personal organization, and write notes to remember your thoughts.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <h3>Reading Lists</h3>
+                <p>Create unlimited custom lists. Share your favorites by making lists public for others to discover.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3>Smart Search</h3>
+                <p>Search your library by title, fandom, author, tags, series, and more. Filter by status or completion.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Beautiful Graphs</h3>
+                <p>Visualize your reading habits with charts showing library growth, top fandoms, ratings distribution, and more.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>Social Features</h3>
+                <p>Recommend works to friends, join book clubs for group reading, and subscribe to others' public lists.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔗</div>
+                <h3>Smart AO3 Links</h3>
+                <p>All metadata is clickable! Authors, fandoms, tags, relationships, characters, and series link directly to AO3.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3>Auto-Detection</h3>
+                <p>Just paste an AO3 link—no command needed! The bot automatically detects links and adds works to your library.</p>
+            </div>
+        </div>
+
+        <div class="card" style="margin-top: 3rem;">
+            <h2>✨ Key Highlights</h2>
+            
+            <h3>Automatic Work Detection</h3>
+            <p>Simply paste any AO3 link in your Discord server and the bot automatically detects it, fetches all metadata (title, author, fandom, tags, summary, word count, chapter count, etc.), and saves it to your personal library. No commands needed!</p>
+
+            <h3>Interactive AO3 Links</h3>
+            <p>Every piece of metadata in work embeds is clickable and links back to AO3:</p>
+            <ul>
+                <li><strong>Author names</strong> → Author's AO3 profile</li>
+                <li><strong>Fandoms</strong> → Fandom tag search on AO3</li>
+                <li><strong>Relationships/Characters/Tags</strong> → Tag search pages</li>
+                <li><strong>Series</strong> → Series page (when ID is available)</li>
+            </ul>
+
+            <h3>Private & Personal</h3>
+            <p>Your library is private to you. Each user has their own data—your ratings, notes, tags, and reading progress are only visible to you unless you choose to share via public lists or recommendations.</p>
+
+            <h3>Rich Metadata</h3>
+            <p>The bot fetches everything from AO3: title, author, rating, category, fandom, relationships, characters, tags, summary, word count, chapters, completion status, series, and collections. All with clickable links back to AO3!</p>
+
+            <h3>Works Offline</h3>
+            <p>Once a work is saved, all data is cached. View your library, search, and track progress even if AO3 is down. Only first-time additions need to fetch from AO3.</p>
+        </div>
+
+        <div class="card">
+            <h2>📋 Status Emoji Guide</h2>
+            <p>Understanding the emojis used throughout the bot:</p>
+            
+            <h3>Reading Status</h3>
+            <div class="emoji-grid">
+                <div class="emoji-item"><span>📕</span><span>Unread / To Read</span></div>
+                <div class="emoji-item"><span>📖</span><span>Currently Reading</span></div>
+                <div class="emoji-item"><span>📗</span><span>Completed / Finished</span></div>
+            </div>
+
+            <h3>Fic Status</h3>
+            <div class="emoji-grid">
+                <div class="emoji-item"><span>✅</span><span>Complete Fic (not WIP)</span></div>
+                <div class="emoji-item"><span>🚧</span><span>Work In Progress (WIP)</span></div>
+            </div>
+
+            <h3>Ratings & Social</h3>
+            <div class="emoji-grid">
+                <div class="emoji-item"><span>★</span><span>Rated (filled star)</span></div>
+                <div class="emoji-item"><span>☆</span><span>Not Rated (empty star)</span></div>
+                <div class="emoji-item"><span>👑</span><span>Owner (clubs/lists)</span></div>
+                <div class="emoji-item"><span>📬</span><span>Recommendations</span></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>📚 AO3 Tracker Bot Documentation</p>
+        <p style="margin-top: 0.5rem;">Made with ❤️ for the fanfiction community</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-muted);">All commands use Discord slash commands (type <code>/</code> to see them)</p>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
