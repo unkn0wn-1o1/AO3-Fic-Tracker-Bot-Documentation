@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete command reference for AO3 Tracker Bot - All slash commands organized by category with examples.">
+    <title>AO3 Tracker Bot - Commands</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">📚</span>
+                <span>AO3 Tracker</span>
+            </a>
+            <nav>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="guide.html" class="nav-link">Guide</a>
+                <a href="commands.html" class="nav-link active">Commands</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h1>📋 Command Reference</h1>
+            <p>All available slash commands organized by category.</p>
+        </div>
+
+        <div class="card">
+            <div class="tip">
+                <div class="tip-title">⌨️ Quick Search</div>
+                <p>Press <kbd>Ctrl</kbd> + <kbd>K</kbd> (or <kbd>Cmd</kbd> + <kbd>K</kbd> on Mac) to focus the search box, or scroll down to browse by category.</p>
+            </div>
+        </div>
+
+        <div class="toc">
+            <h4>Jump to Category</h4>
+            <ul class="toc-list">
+                <li><a href="#cmd-status" class="toc-link">📖 Reading Status</a></li>
+                <li><a href="#cmd-progress" class="toc-link">📊 Progress</a></li>
+                <li><a href="#cmd-ratings" class="toc-link">⭐ Ratings & Notes</a></li>
+                <li><a href="#cmd-tags" class="toc-link">🔖 Tags</a></li>
+                <li><a href="#cmd-lists" class="toc-link">📚 Lists</a></li>
+                <li><a href="#cmd-search" class="toc-link">🔍 Search</a></li>
+                <li><a href="#cmd-info" class="toc-link">📋 Info & Management</a></li>
+                <li><a href="#cmd-stats" class="toc-link">📈 Statistics</a></li>
+                <li><a href="#cmd-graphs" class="toc-link">📊 Graphs</a></li>
+                <li><a href="#cmd-recs" class="toc-link">📬 Recommendations</a></li>
+                <li><a href="#cmd-public" class="toc-link">📢 Public Lists</a></li>
+                <li><a href="#cmd-clubs" class="toc-link">📖 Book Clubs</a></li>
+                <li><a href="#cmd-settings" class="toc-link">⚙️ Settings</a></li>
+            </ul>
+        </div>
+
+        <div class="search-container">
+            <div class="search-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="text" class="search-input" id="searchInput" placeholder="Search commands...">
+            </div>
+        </div>
+
+        <div id="cmd-status" class="command-category">
+            <div class="category-header">
+                <span class="category-icon">📖</span>
+                <h3>Reading Status</h3>
+            </div>
+            <div class="command-list">
+                <div class="command-item">
+                    <div class="command-name">/markread &lt;work_id&gt;</div>
+                    <div>
+                        <div class="command-desc">Mark a work as finished reading. Sets progress to 100% and records finish date.</div>
+                        <div class="command-example">Example: <code>/markread work_id:12345678</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/markreading &lt;work_id&gt;</div>
+                    <div>
+                        <div class="command-desc">Mark a work as currently reading. Records start date if not already set.</div>
+                        <div class="command-example">Example: <code>/markreading work_id:12345678</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/markunread &lt;work_id&gt;</div>
+                    <div>
+                        <div class="command-desc">Reset a work to unread status. Clears progress and dates.</div>
+                        <div class="command-example">Example: <code>/markunread work_id:12345678</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/read</div>
+                    <div>
+                        <div class="command-desc">Show all works you've finished reading.</div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/reading</div>
+                    <div>
+                        <div class="command-desc">Show works you're currently reading.</div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/unread</div>
+                    <div>
+                        <div class="command-desc">Show your to-read list (works not started).</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="cmd-progress" class="command-category">
+            <div class="category-header">
+                <span class="category-icon">📊</span>
+                <h3>Progress Tracking</h3>
+            </div>
+            <div class="command-list">
+                <div class="command-item">
+                    <div class="command-name">/progress &lt;work_id&gt; &lt;chapters&gt;</div>
+                    <div>
+                        <div class="command-desc">Set how many chapters you've read. Auto-completes work at 100%.</div>
+                        <div class="command-example">Example: <code>/progress work_id:12345678 chapters_read:15</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/progresswords &lt;work_id&gt; &lt;words&gt;</div>
+                    <div>
+                        <div class="command-desc">Set how many words you've read.</div>
+                        <div class="command-example">Example: <code>/progresswords work_id:12345678 words_read:50000</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/addchapter &lt;work_id&gt; [num]</div>
+                    <div>
+                        <div class="command-desc">Add chapters to your progress (default: 1).</div>
+                        <div class="command-example">Example: <code>/addchapter work_id:12345678 chapters:3</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/addwords &lt;work_id&gt; &lt;words&gt;</div>
+                    <div>
+                        <div class="command-desc">Add words to your progress.</div>
+                        <div class="command-example">Example: <code>/addwords work_id:12345678 words:5000</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/showprogress &lt;work_id&gt;</div>
+                    <div>
+                        <div class="command-desc">Display visual progress bars for chapters and words.</div>
+                        <div class="command-example">Example: <code>/showprogress work_id:12345678</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/inprogress</div>
+                    <div>
+                        <div class="command-desc">Show all works with tracked progress.</div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/resetprogress &lt;work_id&gt;</div>
+                    <div>
+                        <div class="command-desc">Reset progress tracking to zero.</div>
+                        <div class="command-example">Example: <code>/resetprogress work_id:12345678</code></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="cmd-ratings" class="command-category">
+            <div class="category-header">
+                <span class="category-icon">⭐</span>
+                <h3>Ratings & Notes</h3>
+            </div>
+            <div class="command-list">
+                <div class="command-item">
+                    <div class="command-name">/rate &lt;work_id&gt; &lt;1-5&gt;</div>
+                    <div>
+                        <div class="command-desc">Rate a work from 1-5 stars. Choose from dropdown menu.</div>
+                        <div class="command-example">Example: <code>/rate work_id:12345678 rating:5</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/unrate &lt;work_id&gt;</div>
+                    <div>
+                        <div class="command-desc">Remove your rating from a work.</div>
+                        <div class="command-example">Example: <code>/unrate work_id:12345678</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/toprated</div>
+                    <div>
+                        <div class="command-desc">View your highest rated works.</div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/note &lt;work_id&gt; &lt;text&gt;</div>
+                    <div>
+                        <div class="command-desc">Add a personal note to a work.</div>
+                        <div class="command-example">Example: <code>/note work_id:12345678 note_text:Amazing ending!</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/notes &lt;work_id&gt;</div>
+                    <div>
+                        <div class="command-desc">View your notes for a work.</div>
+                        <div class="command-example">Example: <code>/notes work_id:12345678</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/clearnote &lt;work_id&gt;</div>
+                    <div>
+                        <div class="command-desc">Delete your notes from a work.</div>
+                        <div class="command-example">Example: <code>/clearnote work_id:12345678</code></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="cmd-tags" class="command-category">
+            <div class="category-header">
+                <span class="category-icon">🔖</span>
+                <h3>Custom Tags</h3>
+            </div>
+            <div class="command-list">
+                <div class="command-item">
+                    <div class="command-name">/tag &lt;work_id&gt; &lt;tags&gt;</div>
+                    <div>
+                        <div class="command-desc">Add custom tags (comma separated). Tags are personal to you.</div>
+                        <div class="command-example">Example: <code>/tag work_id:12345678 tags:comfort fic, slow burn</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/untag &lt;work_id&gt; &lt;tags&gt;</div>
+                    <div>
+                        <div class="command-desc">Remove custom tags from a work.</div>
+                        <div class="command-example">Example: <code>/untag work_id:12345678 tags:slow burn</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/tagged &lt;tag&gt;</div>
+                    <div>
+                        <div class="command-desc">Show all works with a specific custom tag.</div>
+                        <div class="command-example">Example: <code>/tagged tag:comfort fic</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/mytags</div>
+                    <div>
+                        <div class="command-desc">View all your custom tags with work counts.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="cmd-lists" class="command-category">
+            <div class="category-header">
+                <span class="category-icon">📚</span>
+                <h3>Reading Lists</h3>
+            </div>
+            <div class="command-list">
+                <div class="command-item">
+                    <div class="command-name">/addlist &lt;list_name&gt; &lt;work_id&gt;</div>
+                    <div>
+                        <div class="command-desc">Add a work to a list (creates list if needed).</div>
+                        <div class="command-example">Example: <code>/addlist list_name:favorites work_id:12345678</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/removelist &lt;list_name&gt; &lt;work_id&gt;</div>
+                    <div>
+                        <div class="command-desc">Remove a work from a list.</div>
+                        <div class="command-example">Example: <code>/removelist list_name:favorites work_id:12345678</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/showlist &lt;list_name&gt;</div>
+                    <div>
+                        <div class="command-desc">Display all works in a list.</div>
+                        <div class="command-example">Example: <code>/showlist list_name:favorites</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/mylists</div>
+                    <div>
+                        <div class="command-desc">View all your reading lists with work counts.</div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/deletelist &lt;list_name&gt;</div>
+                    <div>
+                        <div class="command-desc">Delete an entire reading list.</div>
+                        <div class="command-example">Example: <code>/deletelist list_name:old-list</code></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="cmd-search" class="command-category">
+            <div class="category-header">
+                <span class="category-icon">🔍</span>
+                <h3>Search & Browse</h3>
+            </div>
+            <div class="command-list">
+                <div class="command-item">
+                    <div class="command-name">/search &lt;keyword&gt;</div>
+                    <div>
+                        <div class="command-desc">Search across titles, fandoms, tags, relationships, authors, and your custom tags.</div>
+                        <div class="command-example">Example: <code>/search keyword:coffee shop</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/fandom &lt;name&gt;</div>
+                    <div>
+                        <div class="command-desc">Show all works in a specific fandom.</div>
+                        <div class="command-example">Example: <code>/fandom name:Harry Potter</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/author &lt;name&gt;</div>
+                    <div>
+                        <div class="command-desc">Show all works by a specific author.</div>
+                        <div class="command-example">Example: <code>/author name:AuthorName</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/series &lt;name&gt;</div>
+                    <div>
+                        <div class="command-desc">Show all works in a series.</div>
+                        <div class="command-example">Example: <code>/series name:My Favorite Series</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/collection &lt;name&gt;</div>
+                    <div>
+                        <div class="command-desc">Show all works in a collection.</div>
+                        <div class="command-example">Example: <code>/collection name:Collection Name</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/list [limit]</div>
+                    <div>
+                        <div class="command-desc">List all your saved works (default: 10, max: 25).</div>
+                        <div class="command-example">Example: <code>/list limit:20</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/recent [limit]</div>
+                    <div>
+                        <div class="command-desc">Show recently added works.</div>
+                        <div class="command-example">Example: <code>/recent limit:15</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/completed</div>
+                    <div>
+                        <div class="command-desc">Show only complete fics (not WIPs).</div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/wip</div>
+                    <div>
+                        <div class="command-desc">Show only works in progress.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="cmd-info" class="command-category">
+            <div class="category-header">
+                <span class="category-icon">📋</span>
+                <h3>Info & Management</h3>
+            </div>
+            <div class="command-list">
+                <div class="command-item">
+                    <div class="command-name">/workinfo &lt;work_id&gt;</div>
+                    <div>
+                        <div class="command-desc">Display complete work information with all metadata. Fetches from AO3 if not in database.</div>
+                        <div class="command-example">Example: <code>/workinfo work_id:12345678</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/quickview &lt;work_id&gt;</div>
+                    <div>
+                        <div class="command-desc">Display condensed work information (summary truncated, fewer fields).</div>
+                        <div class="command-example">Example: <code>/quickview work_id:12345678</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/custom &lt;work_id&gt;</div>
+                    <div>
+                        <div class="command-desc">Show only YOUR personal data (status, rating, tags, notes, progress).</div>
+                        <div class="command-example">Example: <code>/custom work_id:12345678</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/quickadd &lt;...&gt;</div>
+                    <div>
+                        <div class="command-desc">Manually add a work without fetching from AO3. See <a href="guide.html#quickadd">Guide</a> for full parameters.</div>
+                        <div class="command-example">Example: <code>/quickadd work_id:12345678 title:"Title" author:"Author" fandom:"Fandom"</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/delete &lt;work_id&gt; [force]</div>
+                    <div>
+                        <div class="command-desc">Delete a work from your database. Shows confirmation unless force=true.</div>
+                        <div class="command-example">Example: <code>/delete work_id:12345678</code> or <code>/delete work_id:12345678 force:true</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/export</div>
+                    <div>
+                        <div class="command-desc">Download a JSON backup of all your works and lists.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="cmd-stats" class="command-category">
+            <div class="category-header">
+                <span class="category-icon">📈</span>
+                <h3>Statistics</h3>
+            </div>
+            <div class="command-list">
+                <div class="command-item">
+                    <div class="command-name">/stats</div>
+                    <div>
+                        <div class="command-desc">View your complete reading statistics (works, words, fandoms, etc.).</div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/userstats [user]</div>
+                    <div>
+                        <div class="command-desc">View another user's statistics (or your own if no user specified).</div>
+                        <div class="command-example">Example: <code>/userstats user:@FriendName</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/serverstats</div>
+                    <div>
+                        <div class="command-desc">View server-wide statistics including most popular works and fandoms.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="cmd-graphs" class="command-category">
+            <div class="category-header">
+                <span class="category-icon">📊</span>
+                <h3>Graphs & Visualizations</h3>
+            </div>
+            <div class="command-list">
+                <div class="command-item">
+                    <div class="command-name">/readinggraph [user]</div>
+                    <div>
+                        <div class="command-desc">Library growth over time (line graph).</div>
+                        <div class="command-example">Example: <code>/readinggraph</code> or <code>/readinggraph user:@FriendName</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/wordsgraph [user]</div>
+                    <div>
+                        <div class="command-desc">Cumulative words over time (line graph).</div>
+                        <div class="command-example">Example: <code>/wordsgraph user:@FriendName</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/fandomgraph [user]</div>
+                    <div>
+                        <div class="command-desc">Top fandoms pie chart.</div>
+                        <div class="command-example">Example: <code>/fandomgraph</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/statusgraph [user]</div>
+                    <div>
+                        <div class="command-desc">Reading status breakdown (bar chart).</div>
+                        <div class="command-example">Example: <code>/statusgraph</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/ratingsgraph [user]</div>
+                    <div>
+                        <div class="command-desc">Rating distribution (bar chart).</div>
+                        <div class="command-example">Example: <code>/ratingsgraph</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/monthlygraph [user]</div>
+                    <div>
+                        <div class="command-desc">Works added per month (bar chart).</div>
+                        <div class="command-example">Example: <code>/monthlygraph</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/servergraph</div>
+                    <div>
+                        <div class="command-desc">Server-wide comparison of library sizes (horizontal bar chart).</div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/allgraphs [user]</div>
+                    <div>
+                        <div class="command-desc">Generate ALL graphs at once! Sends 6 graph images.</div>
+                        <div class="command-example">Example: <code>/allgraphs</code> or <code>/allgraphs user:@FriendName</code></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="cmd-recs" class="command-category">
+            <div class="category-header">
+                <span class="category-icon">📬</span>
+                <h3>Recommendations</h3>
+            </div>
+            <div class="command-list">
+                <div class="command-item">
+                    <div class="command-name">/recommend &lt;user&gt; &lt;work_id&gt; [note]</div>
+                    <div>
+                        <div class="command-desc">Recommend a work to another user with optional note.</div>
+                        <div class="command-example">Example: <code>/recommend user:@Friend work_id:12345678 note:You'll love this!</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/recs</div>
+                    <div>
+                        <div class="command-desc">View all your pending recommendations from others.</div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/acceptrec &lt;work_id&gt;</div>
+                    <div>
+                        <div class="command-desc">Accept a recommendation and add work to your library. Adds a note about who recommended it.</div>
+                        <div class="command-example">Example: <code>/acceptrec work_id:12345678</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/declinerec &lt;work_id&gt;</div>
+                    <div>
+                        <div class="command-desc">Decline and remove a recommendation.</div>
+                        <div class="command-example">Example: <code>/declinerec work_id:12345678</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/sentto [user]</div>
+                    <div>
+                        <div class="command-desc">View recommendations you've sent (optionally filter by user).</div>
+                        <div class="command-example">Example: <code>/sentto</code> or <code>/sentto user:@Friend</code></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="cmd-public" class="command-category">
+            <div class="category-header">
+                <span class="category-icon">📢</span>
+                <h3>Public Lists & Subscriptions</h3>
+            </div>
+            <div class="command-list">
+                <div class="command-item">
+                    <div class="command-name">/makepublic &lt;list_name&gt;</div>
+                    <div>
+                        <div class="command-desc">Make one of your lists public for others to view and subscribe to.</div>
+                        <div class="command-example">Example: <code>/makepublic list_name:favorites</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/makeprivate &lt;list_name&gt;</div>
+                    <div>
+                        <div class="command-desc">Make a public list private again.</div>
+                        <div class="command-example">Example: <code>/makeprivate list_name:favorites</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/listdesc &lt;list_name&gt; &lt;description&gt;</div>
+                    <div>
+                        <div class="command-desc">Add a description to your public list.</div>
+                        <div class="command-example">Example: <code>/listdesc list_name:favorites description:My all-time favorite fics!</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/publiclists [user]</div>
+                    <div>
+                        <div class="command-desc">Browse all public lists (optionally filter by user).</div>
+                        <div class="command-example">Example: <code>/publiclists</code> or <code>/publiclists user:@Someone</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/viewlist &lt;user&gt; &lt;list_name&gt;</div>
+                    <div>
+                        <div class="command-desc">View another user's public list.</div>
+                        <div class="command-example">Example: <code>/viewlist user:@Friend list_name:favorites</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/subscribe &lt;user&gt; &lt;list_name&gt;</div>
+                    <div>
+                        <div class="command-desc">Subscribe to a public list for update notifications (when new works are added).</div>
+                        <div class="command-example">Example: <code>/subscribe user:@Friend list_name:favorites</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/unsubscribe &lt;user&gt; &lt;list_name&gt;</div>
+                    <div>
+                        <div class="command-desc">Unsubscribe from a public list.</div>
+                        <div class="command-example">Example: <code>/unsubscribe user:@Friend list_name:favorites</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/mysubscriptions</div>
+                    <div>
+                        <div class="command-desc">View all lists you're subscribed to.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="cmd-clubs" class="command-category">
+            <div class="category-header">
+                <span class="category-icon">📖</span>
+                <h3>Book Clubs</h3>
+            </div>
+            <div class="command-list">
+                <div class="command-item">
+                    <div class="command-name">/clubs</div>
+                    <div>
+                        <div class="command-desc">View all book clubs on the server.</div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/clubinfo &lt;club_name&gt;</div>
+                    <div>
+                        <div class="command-desc">View detailed information about a club including current read and member progress.</div>
+                        <div class="command-example">Example: <code>/clubinfo club_name:MyBookClub</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/joinclub &lt;club_name&gt;</div>
+                    <div>
+                        <div class="command-desc">Join a book club.</div>
+                        <div class="command-example">Example: <code>/joinclub club_name:MyBookClub</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/leaveclub &lt;club_name&gt;</div>
+                    <div>
+                        <div class="command-desc">Leave a book club (owners must transfer or delete instead).</div>
+                        <div class="command-example">Example: <code>/leaveclub club_name:MyBookClub</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/myclubs</div>
+                    <div>
+                        <div class="command-desc">View all clubs you're a member of with your reading status.</div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/clubmembers &lt;club_name&gt;</div>
+                    <div>
+                        <div class="command-desc">View all members and their reading progress on current read.</div>
+                        <div class="command-example">Example: <code>/clubmembers club_name:MyBookClub</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/createclub &lt;club_name&gt;</div>
+                    <div>
+                        <div class="command-desc">Create a new book club (you become the owner).</div>
+                        <div class="command-example">Example: <code>/createclub club_name:My Awesome Club</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/clubdesc &lt;club_name&gt; &lt;description&gt;</div>
+                    <div>
+                        <div class="command-desc">Set club description (owner only).</div>
+                        <div class="command-example">Example: <code>/clubdesc club_name:MyClub description:We read romance fics!</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/setclubread &lt;club_name&gt; &lt;work_id&gt;</div>
+                    <div>
+                        <div class="command-desc">Set the current club read (owner only). Notifies all members via DM.</div>
+                        <div class="command-example">Example: <code>/setclubread club_name:MyClub work_id:12345678</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/acceptclubread &lt;club_name&gt;</div>
+                    <div>
+                        <div class="command-desc">Add the current club read to your library.</div>
+                        <div class="command-example">Example: <code>/acceptclubread club_name:MyClub</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/deleteclub &lt;club_name&gt;</div>
+                    <div>
+                        <div class="command-desc">Delete a club (owner only).</div>
+                        <div class="command-example">Example: <code>/deleteclub club_name:MyClub</code></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="cmd-settings" class="command-category">
+            <div class="category-header">
+                <span class="category-icon">⚙️</span>
+                <h3>Settings & Help</h3>
+            </div>
+            <div class="command-list">
+                <div class="command-item">
+                    <div class="command-name">/settings</div>
+                    <div>
+                        <div class="command-desc">View all your current settings and quick stats.</div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/recnotify &lt;dm/channel/both&gt;</div>
+                    <div>
+                        <div class="command-desc">Set how you receive recommendation notifications.</div>
+                        <div class="command-example">Example: <code>/recnotify setting:dm</code> (options: dm, channel, both)</div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/privacy &lt;public/private&gt;</div>
+                    <div>
+                        <div class="command-desc">Set profile privacy (reserved for future features).</div>
+                        <div class="command-example">Example: <code>/privacy setting:private</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/displaymode &lt;detailed/compact&gt;</div>
+                    <div>
+                        <div class="command-desc">Set default display mode for work info (reserved for future features).</div>
+                        <div class="command-example">Example: <code>/displaymode setting:compact</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/listlimit &lt;5-25&gt;</div>
+                    <div>
+                        <div class="command-desc">Set how many items show in lists (default: 10).</div>
+                        <div class="command-example">Example: <code>/listlimit limit:15</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/clubnotify &lt;on/off&gt;</div>
+                    <div>
+                        <div class="command-desc">Enable/disable book club notifications (when new club read is set).</div>
+                        <div class="command-example">Example: <code>/clubnotify setting:off</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/subnotify &lt;on/off&gt;</div>
+                    <div>
+                        <div class="command-desc">Enable/disable subscription notifications (when lists you follow are updated).</div>
+                        <div class="command-example">Example: <code>/subnotify setting:off</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/help [category]</div>
+                    <div>
+                        <div class="command-desc">Show help information. Categories: reading, progress, ratings, tags, lists, search, info, social, recs, shared, clubs, graphs, settings.</div>
+                        <div class="command-example">Example: <code>/help</code> or <code>/help category:graphs</code></div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/commands</div>
+                    <div>
+                        <div class="command-desc">Show complete 4-page list of all commands.</div>
+                    </div>
+                </div>
+                <div class="command-item">
+                    <div class="command-name">/ping</div>
+                    <div>
+                        <div class="command-desc">Check if the bot is online and responsive.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>📚 AO3 Tracker Bot Documentation</p>
+        <p style="margin-top: 0.5rem;">Made with ❤️ for the fanfiction community</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-muted);">All commands use Discord slash commands (type <code>/</code> to see them)</p>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
