@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete guide to using AO3 Tracker Bot - Learn how to track your fanfiction reading, organize your library, and use all features.">
+    <title>AO3 Tracker Bot - Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="bg-gradient"></div>
+
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">📚</span>
+                <span>AO3 Tracker</span>
+            </a>
+            <nav>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="guide.html" class="nav-link active">Guide</a>
+                <a href="commands.html" class="nav-link">Commands</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h1>📖 Getting Started Guide</h1>
+            <p>Everything you need to know to start using AO3 Tracker Bot effectively.</p>
+        </div>
+
+        <div class="card">
+            <div class="tip">
+                <div class="tip-title">⌨️ Keyboard Shortcut</div>
+                <p>Press <kbd>Ctrl</kbd> + <kbd>K</kbd> (or <kbd>Cmd</kbd> + <kbd>K</kbd> on Mac) to jump directly to the command search!</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🚀 Adding Works to Your Library</h2>
+            
+            <div class="guide-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Automatic Detection (Easiest!)</h3>
+                    <p>Just paste any AO3 link in a channel where the bot is present. The bot automatically detects the link and adds the work to your library. <strong>No command needed!</strong></p>
+                    <pre><code>https://archiveofourown.org/works/12345678</code></pre>
+                    <p>The bot will:</p>
+                    <ul>
+                        <li>React with ✅ emoji when successful</li>
+                        <li>Display an embed with all the work's information</li>
+                        <li>Automatically save it to YOUR personal library</li>
+                    </ul>
+                    
+                    <div class="note">
+                        <div class="note-title">🤖 Multiple Links</div>
+                        <p>The bot detects ALL AO3 links in a single message! Post multiple links at once and they'll all be added.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="guide-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Using Commands</h3>
+                    <p>You can also use <code>/workinfo</code> with a work ID or URL to add and view a work:</p>
+                    <pre><code>/workinfo work_id:12345678
+/workinfo work_id:https://archiveofourown.org/works/12345678</code></pre>
+                </div>
+            </div>
+
+            <div class="tip">
+                <div class="tip-title">💡 First Load Takes Time</div>
+                <p>The first time you add a work, the bot needs to fetch data from AO3 (takes 1-3 minutes). After that, it's instant because data is cached!</p>
+            </div>
+
+            <div class="note">
+                <div class="note-title">🔒 Restricted Works</div>
+                <p>If a work is restricted (requires AO3 login), the bot can't fetch it automatically. But you can still add it!</p>
+                <ol>
+                    <li>Bot shows error message with clickable button</li>
+                    <li>Click <strong>"📝 Show How to Add Manually"</strong></li>
+                    <li>Follow detailed instructions to use <code>/quickadd</code></li>
+                    <li>The work ID is pre-filled for convenience!</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📊 Tracking Your Reading</h2>
+
+            <h3>Reading Status</h3>
+            <p>Every work can have one of three statuses:</p>
+            
+            <div class="status-legend">
+                <div class="status-item">
+                    <span class="status-emoji">📕</span>
+                    <span><strong>Unread</strong> - Haven't started yet</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-emoji">📖</span>
+                    <span><strong>Reading</strong> - Currently reading</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-emoji">📗</span>
+                    <span><strong>Completed</strong> - Finished reading</span>
+                </div>
+            </div>
+
+            <p>Change status with:</p>
+            <pre><code>/markreading work_id:12345678    # Currently reading
+/markread work_id:12345678       # Finished
+/markunread work_id:12345678     # Reset to unread</code></pre>
+
+            <h3>Progress Tracking</h3>
+            <p>Track exactly how far you've read:</p>
+            <pre><code>/progress work_id:12345678 chapters_read:15    # Read 15 chapters
+/addchapter work_id:12345678 chapters:3        # Add 3 more chapters
+/showprogress work_id:12345678                 # See visual progress bar</code></pre>
+
+            <div class="tip">
+                <div class="tip-title">✨ Auto-Complete Magic</div>
+                <p>When your progress reaches 100%, the bot automatically:</p>
+                <ul>
+                    <li>Changes status from 📖 Reading → 📗 Completed</li>
+                    <li>Records the finish date</li>
+                    <li>Sets chapters_read = total chapters</li>
+                </ul>
+                <p><strong>Example:</strong> A 10-chapter fic becomes "completed" when you use <code>/progress work_id:12345678 chapters_read:10</code></p>
+            </div>
+
+            <h3>Rating & Notes</h3>
+            <p>Add your personal rating and thoughts:</p>
+            <pre><code>/rate work_id:12345678 rating:5                                    # 5 stars!
+/note work_id:12345678 note_text:Amazing slow burn, cried at the end
+/tag work_id:12345678 tags:comfort fic, slow burn, favorite</code></pre>
+        </div>
+
+        <div class="card">
+            <h2>📚 Organizing with Lists</h2>
+
+            <p>Create custom lists to organize your library however you want:</p>
+            <pre><code>/addlist list_name:favorites work_id:12345678      # Add to "favorites" list
+/addlist list_name:to-reread work_id:12345678      # Add to "to-reread" list
+/showlist list_name:favorites                       # View all works in list
+/mylists                                            # See all your lists</code></pre>
+
+            <h3>List Ideas</h3>
+            <ul>
+                <li><strong>favorites</strong> - Your all-time best</li>
+                <li><strong>comfort reads</strong> - For bad days</li>
+                <li><strong>to-reread</strong> - Works worth revisiting</li>
+                <li><strong>currently following</strong> - WIPs you're tracking</li>
+                <li><strong>rec'd by friends</strong> - Recommendations from others</li>
+            </ul>
+
+            <h3>Making Lists Public</h3>
+            <p>Share your lists with others:</p>
+            <pre><code>/makepublic list_name:favorites                                    # Make list public
+/listdesc list_name:favorites description:My all-time favorite fics!   # Add description</code></pre>
+            <p>Others can then view and subscribe to your list!</p>
+        </div>
+
+        <div class="card">
+            <h2>🔍 Finding Works</h2>
+
+            <h3>Search Your Library</h3>
+            <pre><code>/search keyword:coffee shop           # Search all fields
+/fandom name:Harry Potter             # Filter by fandom
+/author name:AuthorName               # Filter by author
+/series name:SeriesName               # Filter by series
+/tagged tag:comfort fic               # Search your custom tags</code></pre>
+
+            <h3>Browse by Status</h3>
+            <pre><code>/unread              # To-read pile
+/reading             # Currently reading
+/read                # Finished works
+/completed           # Complete fics (not WIPs)
+/wip                 # Works in progress
+/toprated            # Your highest rated</code></pre>
+        </div>
+
+        <div class="card">
+            <h2>👥 Social Features</h2>
+
+            <h3>Recommending to Friends</h3>
+            <pre><code>/recommend user:@Friend work_id:12345678 note:You'll love this one!</code></pre>
+            <p>Your friend will receive a notification and can accept or decline:</p>
+            <pre><code>/recs                         # View pending recommendations
+/acceptrec work_id:12345678   # Accept and add to library
+/declinerec work_id:12345678  # Decline</code></pre>
+
+            <h3>Public Lists & Subscriptions</h3>
+            <pre><code>/publiclists                              # Browse all public lists
+/viewlist user:@User list_name:favorites  # View someone's list
+/subscribe user:@User list_name:favorites # Get notified of updates</code></pre>
+
+            <div class="note">
+                <div class="note-title">📢 When You Get Notified</div>
+                <p>Subscribers receive DM notifications when:</p>
+                <ul>
+                    <li>✅ New work is added to a list you're subscribed to</li>
+                    <li>❌ NOT when works are removed</li>
+                    <li>❌ NOT when list description changes</li>
+                </ul>
+            </div>
+
+            <h3>Book Clubs</h3>
+            <p>Create or join reading groups:</p>
+            <pre><code>/clubs                                        # See all clubs
+/joinclub club_name:ClubName                  # Join a club
+/createclub club_name:MyClub                  # Create your own
+/setclubread club_name:MyClub work_id:12345678  # Set the current read (owner)</code></pre>
+
+            <div class="note">
+                <div class="note-title">📬 Club Notifications</div>
+                <p>Members receive DM notifications when the owner sets a new club read. The notification includes:</p>
+                <ul>
+                    <li>Work title, author, and link</li>
+                    <li>Instructions to use <code>/acceptclubread</code> to add it to your library</li>
+                </ul>
+                <p>Toggle with: <code>/clubnotify setting:off</code></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📊 Statistics & Graphs</h2>
+
+            <p>Visualize your reading habits:</p>
+            <pre><code>/stats               # Text statistics overview
+/readinggraph        # Library growth over time
+/fandomgraph         # Top fandoms pie chart
+/ratingsgraph        # Your rating distribution
+/allgraphs           # Generate ALL graphs at once!</code></pre>
+
+            <p>View someone else's graphs:</p>
+            <pre><code>/readinggraph user:@FriendName    # View friend's library growth</code></pre>
+
+            <div class="note">
+                <div class="note-title">📈 Graph Types Available</div>
+                <ul style="margin-top: 0.5rem; margin-bottom: 0;">
+                    <li><strong>readinggraph</strong> - Library growth over time (line)</li>
+                    <li><strong>wordsgraph</strong> - Cumulative words (line)</li>
+                    <li><strong>fandomgraph</strong> - Top fandoms (pie chart)</li>
+                    <li><strong>statusgraph</strong> - Reading status breakdown (bar)</li>
+                    <li><strong>ratingsgraph</strong> - Rating distribution (bar)</li>
+                    <li><strong>monthlygraph</strong> - Works added per month (bar)</li>
+                    <li><strong>servergraph</strong> - Compare with server members (horizontal bar)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>💾 Your Data</h2>
+
+            <h3>Auto-Save</h3>
+            <p>Your data automatically saves every 5 minutes and whenever the bot shuts down. You never need to manually save.</p>
+
+            <div class="warning">
+                <div class="warning-title">⚠️ Important: Data Saving</div>
+                <ul>
+                    <li>✅ Auto-saves every 5 minutes</li>
+                    <li>✅ Saves on bot restart/shutdown</li>
+                    <li>⚠️ If bot crashes unexpectedly, last 5 min may be lost</li>
+                    <li>💡 Use <code>/export</code> regularly for backups!</li>
+                </ul>
+            </div>
+
+            <h3>Export Backup</h3>
+            <pre><code>/export</code></pre>
+            <p>Downloads a JSON file with all your data. Great for backups!</p>
+            
+            <div class="note">
+                <div class="note-title">💾 What's Included in Export?</div>
+                <p><strong>Included:</strong></p>
+                <ul>
+                    <li>All works with full metadata</li>
+                    <li>Your ratings, notes, tags, progress</li>
+                    <li>All reading lists and work assignments</li>
+                </ul>
+                <p><strong>NOT included:</strong></p>
+                <ul>
+                    <li>Recommendations (sent/received)</li>
+                    <li>Public list subscribers</li>
+                    <li>Book club memberships</li>
+                    <li>Settings</li>
+                </ul>
+                <p>Filename format: <code>ao3_export_YourName_20240115_143022.json</code></p>
+            </div>
+
+            <h3>Privacy</h3>
+            <p>Your library is completely private. Other users cannot see your works, ratings, notes, or progress unless you:</p>
+            <ul>
+                <li>Make a list public</li>
+                <li>Send a recommendation</li>
+                <li>Share your stats (they can use <code>/userstats user:@You</code>)</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>⚙️ Settings</h2>
+
+            <p>Customize how the bot works for you:</p>
+            <pre><code>/settings                           # View all your current settings
+/recnotify setting:dm               # Receive recs via DM only
+/clubnotify setting:off             # Disable club notifications
+/subnotify setting:off              # Disable subscription notifications
+/listlimit limit:15                 # Show 15 items in lists (default: 10)</code></pre>
+
+            <h3>Default Settings</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Setting</th>
+                        <th>Default Value</th>
+                        <th>Command to Change</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Recommendation Notifications</td>
+                        <td>📩💬 Both (DM + Channel)</td>
+                        <td><code>/recnotify</code></td>
+                    </tr>
+                    <tr>
+                        <td>Profile Privacy</td>
+                        <td>🌐 Public</td>
+                        <td><code>/privacy</code></td>
+                    </tr>
+                    <tr>
+                        <td>Display Mode</td>
+                        <td>📖 Detailed</td>
+                        <td><code>/displaymode</code></td>
+                    </tr>
+                    <tr>
+                        <td>List Display Limit</td>
+                        <td>10 items</td>
+                        <td><code>/listlimit</code></td>
+                    </tr>
+                    <tr>
+                        <td>Club Notifications</td>
+                        <td>✅ Enabled</td>
+                        <td><code>/clubnotify</code></td>
+                    </tr>
+                    <tr>
+                        <td>Subscription Notifications</td>
+                        <td>✅ Enabled</td>
+                        <td><code>/subnotify</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2>📝 Quick Add (Manual Entry)</h2>
+
+            <p>When the bot can't fetch a work automatically (restricted/private works), you can add it manually:</p>
+            <pre><code>/quickadd work_id:12345678 title:"The Best Fic Ever" author:"AuthorName" fandom:"Marvel"</code></pre>
+
+            <h3>Required Parameters</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Description</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>work_id</code></td>
+                        <td>AO3 work ID or URL</td>
+                        <td>12345678</td>
+                    </tr>
+                    <tr>
+                        <td><code>title</code></td>
+                        <td>Work title</td>
+                        <td>"The Best Fic Ever"</td>
+                    </tr>
+                    <tr>
+                        <td><code>author</code></td>
+                        <td>Author name(s), comma separated</td>
+                        <td>"Author1, Author2"</td>
+                    </tr>
+                    <tr>
+                        <td><code>fandom</code></td>
+                        <td>Fandom name(s), comma separated</td>
+                        <td>"Marvel, MCU"</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Optional Parameters</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Description</th>
+                        <th>Options/Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>rating</code></td>
+                        <td>Content rating</td>
+                        <td>General, Teen, Mature, Explicit, Not Rated</td>
+                    </tr>
+                    <tr>
+                        <td><code>category</code></td>
+                        <td>Category</td>
+                        <td>M/M, F/F, F/M, Gen, Multi, Other</td>
+                    </tr>
+                    <tr>
+                        <td><code>status</code></td>
+                        <td>Completion status</td>
+                        <td>Complete, WIP, Unknown</td>
+                    </tr>
+                    <tr>
+                        <td><code>words</code></td>
+                        <td>Word count</td>
+                        <td>50000 or 50,000</td>
+                    </tr>
+                    <tr>
+                        <td><code>chapters</code></td>
+                        <td>Chapter count</td>
+                        <td>10/10 or 5/?</td>
+                    </tr>
+                    <tr>
+                        <td><code>relationships</code></td>
+                        <td>Ship tags, comma separated</td>
+                        <td>"Steve/Bucky, Tony/Pepper"</td>
+                    </tr>
+                    <tr>
+                        <td><code>characters</code></td>
+                        <td>Character names, comma separated</td>
+                        <td>"Steve Rogers, Bucky Barnes"</td>
+                    </tr>
+                    <tr>
+                        <td><code>tags</code></td>
+                        <td>Freeform tags, comma separated</td>
+                        <td>"Fluff, Angst, Hurt/Comfort"</td>
+                    </tr>
+                    <tr>
+                        <td><code>summary</code></td>
+                        <td>Work summary</td>
+                        <td>"A story about..."</td>
+                    </tr>
+                    <tr>
+                        <td><code>series</code></td>
+                        <td>Series name(s), comma separated</td>
+                        <td>"My Series Name"</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="tip">
+                <div class="tip-title">💡 Pro Tip</div>
+                <p>Use quotes around values that contain spaces! For example: <code>title:"My Amazing Fic"</code></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>ℹ️ Good to Know</h2>
+
+            <h3>🔗 Interactive Links</h3>
+            <p>Every piece of metadata in work embeds is clickable:</p>
+            <ul>
+                <li><strong>Author names</strong> → Author's AO3 profile</li>
+                <li><strong>Fandoms</strong> → Fandom tag on AO3</li>
+                <li><strong>Relationships/Characters/Tags</strong> → Tag search on AO3</li>
+                <li><strong>Series</strong> → Series page (if ID available)</li>
+            </ul>
+            <p>Click any blue link in the embed to explore related works on AO3!</p>
+
+            <div class="note">
+                <div class="note-title">ℹ️ Collections</div>
+                <p>Collection names are displayed as plain text (not clickable links) due to AO3 API limitations.</p>
+            </div>
+
+            <h3>📜 Long Works</h3>
+            <p>Works with extensive metadata (100+ tags, many relationships/characters) may split across multiple embed messages due to Discord's 25-field limit. This is normal!</p>
+
+            <h3>🔢 Work IDs</h3>
+            <p>You can use either the work ID or full URL in any command:</p>
+            <pre><code>/workinfo work_id:12345678
+/workinfo work_id:https://archiveofourown.org/works/12345678</code></pre>
+            <p>Both work identically!</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>📚 AO3 Tracker Bot Documentation</p>
+        <p style="margin-top: 0.5rem;">Made with ❤️ for the fanfiction community</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-muted);">All commands use Discord slash commands (type <code>/</code> to see them)</p>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
